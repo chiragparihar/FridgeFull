@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "965929629387",
+    "firebase_url": "https://fridgefull-55f6b.firebaseio.com",
+    "project_id": "fridgefull-55f6b",
+    "storage_bucket": "fridgefull-55f6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965929629387:android:3000634f3f9599cfae4d4e",
+        "android_client_info": {
+          "package_name": "com.tempodev.fridgefull"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965929629387-bik82ebsg1b038mlhmtfuhdsmoh5b08k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaJZBpLKiRq1YbLApIpuO3S20zeUGO9Jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965929629387-bik82ebsg1b038mlhmtfuhdsmoh5b08k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
