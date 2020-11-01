@@ -36,7 +36,16 @@ class _AuthenticationState extends State<Authentication>{
            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height:200,
+                height:150,
+                child: Center(
+                  child: Text(
+                    "FridgeFull",
+                    style:TextStyle(fontSize: 50,color: Colors.black54),
+                  ),
+                ),
+              ),
+              Container(
+                height:50,
                 child: Center(
                   child: Text(
                     _err,
@@ -59,7 +68,7 @@ class _AuthenticationState extends State<Authentication>{
                 ),
               ),
               Container(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
                   obscureText: true,
                   controller: _psk,
@@ -73,7 +82,7 @@ class _AuthenticationState extends State<Authentication>{
                 ),
               ),
               Container(
-                padding:const EdgeInsets.all(16.0),
+                padding:const EdgeInsets.all(10.0),
                 child: Container(
                   width:MediaQuery.of(context).size.width /1.4,
                   height:45,
@@ -88,6 +97,7 @@ class _AuthenticationState extends State<Authentication>{
                       print(shouldNavigate);
                       if(shouldNavigate.answ){
                         Navigator.pushNamed(context,HomeView.routeName);
+                        changeErr(shouldNavigate.mess);
                       }
                       else{
                         _psk.clear();
@@ -114,6 +124,7 @@ class _AuthenticationState extends State<Authentication>{
                       auth shouldNavigate = await signIn(_email.text,_psk.text);
                       if(shouldNavigate.answ){
                         Navigator.push(context,MaterialPageRoute(builder:(context) => HomeView()));
+                        changeErr(shouldNavigate.mess);
                       }
                       else{
                         changeErr(shouldNavigate.mess);
