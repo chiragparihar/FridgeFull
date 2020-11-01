@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c7c2fa-6fef-4a45-8d68-f099d91ae6b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/android/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/android/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/android/app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/Homepage.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/authenticate.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/home_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/net/apis.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/net/flutterfire.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/fridgefull/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +47,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$APPLICATION_PLUGINS_DIR$/Dart" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -44,21 +64,61 @@
       <option name="presentableId" value="Default" />
       <updated>1603151620378</updated>
     </task>
+    <task id="LOCAL-00001" summary="updated dependencies">
+      <created>1604265947590</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604265947590</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated dependencies" />
   </component>
   <component name="WindowStateProjectService">
     <state x="893" y="325" width="187" height="185" key="#Custom_Plugin_Repositories" timestamp="1604265447769">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="893" y="325" width="187" height="185" key="#Custom_Plugin_Repositories/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265447769" />
+    <state x="443" y="117" width="1024" height="852" key="#Project_Structure" timestamp="1604265707992">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="443" y="117" width="1024" height="852" key="#Project_Structure/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265707992" />
     <state x="418" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604265163607">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265163607" />
+    <state x="100" y="100" width="1720" height="880" key="AVDManager" timestamp="1604266131292">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="100" width="1720" height="880" key="AVDManager/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604266131292" />
+    <state x="499" y="89" width="912" height="908" key="CommitChangelistDialog2" timestamp="1604265947143">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="499" y="89" width="912" height="908" key="CommitChangelistDialog2/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265947143" />
     <state x="743" y="301" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604265489911">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="301" width="424" height="491" key="FileChooserDialogImpl/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265489911" />
+    <state width="937" height="240" key="GridCell.Tab.0.bottom" timestamp="1604265805387">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="240" key="GridCell.Tab.0.bottom/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265805387" />
+    <state width="937" height="240" key="GridCell.Tab.0.center" timestamp="1604265805387">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="240" key="GridCell.Tab.0.center/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265805387" />
+    <state width="937" height="240" key="GridCell.Tab.0.left" timestamp="1604265805386">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="240" key="GridCell.Tab.0.left/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265805386" />
+    <state width="937" height="240" key="GridCell.Tab.0.right" timestamp="1604265805387">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="240" key="GridCell.Tab.0.right/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265805387" />
     <state x="481" y="46" width="1022" height="737" key="SettingsEditor" timestamp="1604265701803">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
