@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import  'package:google_sign_in/google_sign_in.dart';
-
+import 'utils/constants.dart';
 import 'home_view.dart';
 import 'net/flutterfire.dart';
 
-
 class Authentication extends StatefulWidget{
+  static const String routeName = "/authenticate";
   @override
   _AuthenticationState createState() => _AuthenticationState();
 
 }
 class _AuthenticationState extends State<Authentication>{
+
   TextEditingController _email = TextEditingController();
   TextEditingController _psk = TextEditingController();
   String _err= "";
@@ -96,7 +97,7 @@ class _AuthenticationState extends State<Authentication>{
                       auth shouldNavigate = await register(_email.text,_psk.text);
                       print(shouldNavigate);
                       if(shouldNavigate.answ){
-                        Navigator.pushNamed(context,HomeView.routeName);
+                        Navigator.pushReplacementNamed(context,HomeView.routeName);
                         changeErr(shouldNavigate.mess);
                       }
                       else{
@@ -125,6 +126,7 @@ class _AuthenticationState extends State<Authentication>{
                       if(shouldNavigate.answ){
                         Navigator.push(context,MaterialPageRoute(builder:(context) => HomeView()));
                         changeErr(shouldNavigate.mess);
+                        Constants.prefs.setBool("loggedIn", true);
                       }
                       else{
                         changeErr(shouldNavigate.mess);
