@@ -56,7 +56,7 @@ class _AuthenticationState extends State<Authentication>{
               ),
               Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
                   controller: _email,
                   decoration: InputDecoration(
