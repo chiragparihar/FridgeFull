@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'groceryItem.dart';
 import 'listCard.dart';
+import 'package:http/http.dart' as http;
 
 
 GroceryItem item1 = GroceryItem(title: 'onions', description: 'green veg', quantity: 4, image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBroccoli&psig=AOvVaw08NJjY9g5TCxsyXkzJtGFP&ust=1604621080540000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiKsL6N6uwCFQAAAAAdAAAAABAD');
@@ -26,8 +29,26 @@ class GroceryList extends StatefulWidget {
 }
 
 class _GroceryListState extends State<GroceryList> {
+  //final String key = "s0d7tujx0amxrm4mkt1slxr9q4tlll";
+  //final String barcode = "3614272049529";
+  @override
+  void initState(){
+    super.initState();
+    fetchData();
+  }
+  fetchData() async{
+    String url = "https://api.barcodelookup.com/v2/products?barcode=9780140157376&key=3uhky000hei7jd23mhvr2pxunqqxie";
+    var res = await http.get(url);
+    print(res.statusCode);
+    var data = jsonDecode(res.body);
+    setState(() {
 
-
+    });
+    if(res.statusCode == 200) {
+      print("yes");
+    }
+    print(data);
+  }
   _addItem(GroceryItem item){
     if(currentIndex == 0) {
       setState(() {
@@ -95,16 +116,18 @@ class _GroceryListState extends State<GroceryList> {
 
     return Scaffold(
       backgroundColor: Colors.lightBlue,
+      /*
       appBar: AppBar(
         title: Text('myFridge'),
         centerTitle: true,
         backgroundColor: Colors.blue,
-      ),
+      ),*/
       body: tabs[currentIndex],
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
           setState(() {
+            fetchData();
             currentIndex == 0 ? groceryList.add(item1): fridgeList.add(item1);
 
           }

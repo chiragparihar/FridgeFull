@@ -5,6 +5,7 @@ import 'utils/constants.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:fridgefull/groceryList.dart';
 class HomeView extends StatefulWidget{
   static const String routeName = "/home";
   @override
@@ -60,7 +61,7 @@ class _HomeViewState extends State<HomeView>{
           )
         ],
       ),
-      body:Container(
+      body: Container(
           alignment: Alignment.center,
           child: Flex(
             direction: Axis.vertical,

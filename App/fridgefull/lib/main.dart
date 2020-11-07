@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fridgefull/Homepage.dart';
 import 'package:fridgefull/authenticate.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'utils/constants.dart';
 import 'package:fridgefull/home_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           HomeView.routeName:(context) => HomeView(),
         }
 
+     // home:GroceryList(),
     );
   }
 }
