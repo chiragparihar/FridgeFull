@@ -61,7 +61,8 @@ class _HomeViewState extends State<HomeView>{
           )
         ],
       ),
-      body: Container(
+      body: GroceryList());
+      /*Container(
           alignment: Alignment.center,
           child: Flex(
             direction: Axis.vertical,
@@ -74,6 +75,6 @@ class _HomeViewState extends State<HomeView>{
             Text('Scan result : $_scanBarcode\n',
             style: TextStyle(fontSize: 20))
             ])));
-
+*/
   }
 }
