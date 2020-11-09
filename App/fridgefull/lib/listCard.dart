@@ -27,7 +27,7 @@ class _ListCardTemplateState extends State<ListCardTemplate> {
         leading: Image(
           image: NetworkImage(widget.itemData.image),
         ),
-        title: Text(widget.itemData.title+" ("+widget.itemData.price.toString() +")"),
+        title: Text(widget.itemData.title+" (\$"+widget.itemData.price.toString() +")"),
         subtitle: Text(widget.itemData.description),
         children: [
           Divider(
