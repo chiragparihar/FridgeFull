@@ -25,9 +25,9 @@ class _ListCardTemplateState extends State<ListCardTemplate> {
     return Card(
       child: ExpansionTile(
         leading: Image(
-          image: NetworkImage('https://image.shutterstock.com/z/stock-photo-broccoli-vegetable-isolated-on-white-background-175387835.jpg'),
+          image: NetworkImage(widget.itemData.image),
         ),
-        title: Text(widget.itemData.title),
+        title: Text(widget.itemData.title+" ("+widget.itemData.price.toString() +")"),
         subtitle: Text(widget.itemData.description),
         children: [
           Divider(

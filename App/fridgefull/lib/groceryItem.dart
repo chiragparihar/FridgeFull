@@ -4,7 +4,8 @@ class GroceryItem {
   String description;
   String image;
   int quantity;
+  double price;
 
-  GroceryItem({this.title, this.description, this.quantity, this.image});
+  GroceryItem({this.title, this.description, this.quantity, this.image,this.price});
 
 }
