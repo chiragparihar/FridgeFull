@@ -64,10 +64,11 @@ class _GroceryListState extends State<GroceryList> {
     if(res.statusCode == 200){
       var data = jsonDecode(res.body);
       print(data);
-      String desc = (((data['products'][0])["description"]).length > 20) ? ((data['products'][0])["description"])[20]:((data['products'][0])["description"]);
+      String desc = (((data['products'][0])["description"]).length > 35) ? (data['products'][0]["description"]).substring(0,35).split(",")[0]:((data['products'][0])["description"].split(",")[0]);
+      print((data['products'][0])["description"].split(",")[0]);
       double pc = double.parse(data['products'][0]["stores"][0]["store_price"]);
       item = GroceryItem(image: (data['products'][0])['images'][0],title:(data['products'][0]["product_name"].split(","))[0],quantity:1,description:desc,price:pc);
-      print(data);
+
       print((data['products'][0]["product_name"].split(","))[0]);
       print((data['products'][0])['images'][0]);
       print((data['products'][0])['images'][0]);

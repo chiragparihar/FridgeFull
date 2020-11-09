@@ -21,7 +21,7 @@ class _HomeViewState extends State<HomeView>{
     return Scaffold(
      // backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor:Colors.blueAccent,
+        backgroundColor:Colors.lightBlue,
         title: Text("FridgeFull"),
         actions: <Widget>[
           Container(
