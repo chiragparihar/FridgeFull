@@ -40,7 +40,7 @@ class _AuthenticationState extends State<Authentication>{
                 height:150,
                 child: Center(
                   child: Text(
-                    "FridgeFull",
+                    "MyFridge",
                     style:TextStyle(fontSize: 50,color: Colors.black54),
                   ),
                 ),

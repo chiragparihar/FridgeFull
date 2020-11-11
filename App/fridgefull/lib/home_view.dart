@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView>{
      // backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor:Colors.lightBlue,
-        title: Text("FridgeFull"),
+        title: Text("MyFridge"),
         actions: <Widget>[
           Container(
             child: IconButton(
