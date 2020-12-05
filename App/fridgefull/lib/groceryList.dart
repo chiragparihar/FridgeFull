@@ -131,12 +131,13 @@ class _GroceryListState extends State<GroceryList> {
 
     final tabs = [
       ListView(
+
           children: groceryList.map((item) => ListCardTemplate(
             itemData: item,
             addItem: _addItem,
             removeItem: _removeItem,
             switchList: _switchList,
-          )).toList()
+          )).toList(),
       ),
       ListView(
           children: fridgeList.map((item) => ListCardTemplate(
@@ -149,7 +150,7 @@ class _GroceryListState extends State<GroceryList> {
     ];
 
     return Scaffold(
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Colors.lightBlue[400],
       /*
       appBar: AppBar(
         title: Text('myFridge'),
@@ -157,8 +158,13 @@ class _GroceryListState extends State<GroceryList> {
         backgroundColor: Colors.blue,
       ),*/
       body: tabs[currentIndex],
+
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        backgroundColor: Colors.deepOrange,
+        child: Icon(
+            Icons.add,
+          color: Colors.white,
+        ),
         onPressed: (){
           scanBarcodeNormal();
           setState(() {
@@ -169,6 +175,15 @@ class _GroceryListState extends State<GroceryList> {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.deepOrange,
+        unselectedItemColor: Colors.white,
+
+        selectedFontSize: 14,
+        unselectedFontSize: 12,
+        selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+        ),
+        backgroundColor: Colors.blue[700],
         currentIndex: currentIndex,
         onTap: (index){
           setState(() {
@@ -177,8 +192,10 @@ class _GroceryListState extends State<GroceryList> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Grocery List',
+            icon: Icon(
+                Icons.shopping_cart,
+            ),
+            label: "Grocery List",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

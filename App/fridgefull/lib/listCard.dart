@@ -24,40 +24,85 @@ class _ListCardTemplateState extends State<ListCardTemplate> {
   Widget build(BuildContext context) {
     return Card(
       child: ExpansionTile(
-        leading: Image(
-          image: NetworkImage(widget.itemData.image),
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage(widget.itemData.image),
         ),
-        title: Text(widget.itemData.title+" (\$"+widget.itemData.price.toString() +")"),
-        subtitle: Text(widget.itemData.description),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              children: [
+                Text(
+                    widget.itemData.title,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                    widget.itemData.description,
+                  style: TextStyle(
+                    fontSize: 12
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(width: 50,),
+            Text(
+                "\$"+widget.itemData.price.toString(),
+              style: TextStyle(
+                fontSize: 20
+              ),
+            ),
+          ],
+        ),
         children: [
           Divider(
             height: 5.0,
-            color: Colors.grey[800],
+            color: Colors.grey[400],
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(4.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                RaisedButton.icon(
+                RaisedButton(
                     color: Colors.blue,
+
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+
+                    ),
+                    splashColor: Colors.lightBlueAccent,
                     disabledColor: Colors.blue[100],
                     textColor: Colors.white70,
                     onPressed: (){
                       widget.removeItem(widget.itemData);
                     },
-                    icon: Icon(Icons.cancel_outlined),
-                    label: Text('Remove'),
+                  child: Text(
+                      "Remove",
+                      style: TextStyle(
+                          fontSize: 14
+                      )
+                  ),
                 ),
-                RaisedButton.icon(
+                RaisedButton(
                   color: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  splashColor: Colors.lightBlueAccent,
                   disabledColor: Colors.blue[100],
                   textColor: Colors.white70,
                   onPressed: (){
                     widget.switchList(widget.itemData);
                   },
-                  icon: Icon(Icons.cancel_outlined),
-                  label: Text('Switch List'),
+                  child: Text(
+                      "Switch List",
+                      style: TextStyle(
+                        fontSize: 14
+                      )
+                  ),
                 ),
               ],
             ),

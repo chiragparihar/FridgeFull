@@ -21,13 +21,21 @@ class _HomeViewState extends State<HomeView>{
     return Scaffold(
      // backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor:Colors.lightBlue,
-        title: Text("FridgeFull"),
+        backgroundColor:Colors.blue[700],
+        title: Center(
+          child: Text(
+              "MyFridge",
+            style: TextStyle(
+              color: Colors.white
+            ),
+          ),
+        ),
         actions: <Widget>[
           Container(
             child: IconButton(
               icon: Icon(
                 Icons.exit_to_app,
+                color: Colors.white,
               ),
               onPressed: () {
                 Constants.prefs.setBool("loggedIn", false);
