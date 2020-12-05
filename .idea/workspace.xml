@@ -6,15 +6,34 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c7c2fa-6fef-4a45-8d68-f099d91ae6b5" name="Default Changelist" comment="updated list styles">
-      <change beforePath="$PROJECT_DIR$/.idea/fridgeFull.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fridgeFull.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/groceryList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/lib/groceryList.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/home_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/lib/home_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/fridgefull/lib/listCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/lib/listCard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/fridgefull/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/App/fridgefull/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev_logs/James/JamesRichards_DevLog" beforeDir="false" afterPath="$PROJECT_DIR$/dev_logs/James/JamesRichards_DevLog" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +82,38 @@
       <option name="project" value="LOCAL" />
       <updated>1604265947590</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated list styles">
+      <created>1607196396070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607196396070</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated dependencies" />
@@ -89,11 +138,11 @@
     </state>
     <state x="100" y="100" width="1720" height="880" key="AVDManager/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604266131292" />
     <state x="100" y="72" width="1720" height="870" key="AVDManager/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607188934676" />
-    <state x="499" y="61" width="912" height="908" key="CommitChangelistDialog2" timestamp="1607196199455">
+    <state x="499" y="61" width="912" height="908" key="CommitChangelistDialog2" timestamp="1607196974452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="499" y="89" width="912" height="908" key="CommitChangelistDialog2/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265947143" />
-    <state x="499" y="61" key="CommitChangelistDialog2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607196199455" />
+    <state x="499" y="61" key="CommitChangelistDialog2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607196974452" />
     <state x="743" y="301" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604265489911">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -114,11 +163,23 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="937" height="240" key="GridCell.Tab.0.right/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265805387" />
+    <state x="321" y="281" key="MultipleFileMergeDialog" timestamp="1607196468866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="321" y="281" key="MultipleFileMergeDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607196468866" />
     <state x="481" y="19" width="1022" height="737" key="SettingsEditor" timestamp="1605113289856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="481" y="46" width="1022" height="737" key="SettingsEditor/1920.0.1366.768/0.27.1920.1053@0.27.1920.1053" timestamp="1604265701803" />
     <state x="481" y="19" key="SettingsEditor/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1605113289856" />
+    <state x="275" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607196404873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="275" y="253" key="Vcs.Push.Dialog.v2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607196404873" />
+    <state x="492" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607197187674">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="492" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1607197187674" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
