@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'authenticate.dart';
-import 'utils/constants.dart';
+import 'net/flutterfire.dart';
 
 import 'dart:async';
 
@@ -13,7 +13,7 @@ class HomeView extends StatefulWidget{
 
 }
 class _HomeViewState extends State<HomeView>{
-
+  final AuthService _auth = AuthService();
   // Platform messages are asynchronous, so we initialize in an async method.
 
   @override
@@ -38,7 +38,8 @@ class _HomeViewState extends State<HomeView>{
                 color: Colors.white,
               ),
               onPressed: () {
-                Constants.prefs.setBool("loggedIn", false);
+               // Constants.prefs.setBool("loggedIn", false);
+                _auth.signOut();
                 Navigator.pushReplacementNamed(context, Authentication.routeName);
               },
             ),

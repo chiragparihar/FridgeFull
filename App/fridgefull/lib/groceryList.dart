@@ -5,7 +5,8 @@ import 'groceryItem.dart';
 import 'listCard.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'net/flutterfire.dart';
 GroceryItem item1 = GroceryItem(title: 'onions', description: 'green veg', quantity: 4, image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBroccoli&psig=AOvVaw08NJjY9g5TCxsyXkzJtGFP&ust=1604621080540000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiKsL6N6uwCFQAAAAAdAAAAABAD');
 
 List<GroceryItem> groceryList = [
@@ -23,12 +24,14 @@ List<GroceryItem> fridgeList = [
 
 class GroceryList extends StatefulWidget {
 
-
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
   _GroceryListState createState() => _GroceryListState();
 }
 
 class _GroceryListState extends State<GroceryList> {
+  final AuthService _auth = AuthService();
+
   String _scanBarcode = 'Unknown';
   Future<void> scanBarcodeNormal() async {
     String barcodeScanRes;
@@ -56,6 +59,7 @@ class _GroceryListState extends State<GroceryList> {
 
   }
   fetchData() async{
+
     GroceryItem item;
     String url = "https://api.barcodelookup.com/v2/products?barcode=$_scanBarcode&key=3uhky000hei7jd23mhvr2pxunqqxie";
     var res = await http.get(url);
@@ -125,9 +129,12 @@ class _GroceryListState extends State<GroceryList> {
   }
 
   int currentIndex = 0;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context) {
+    String uid  = _auth.getUserId();
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
 
     final tabs = [
       ListView(

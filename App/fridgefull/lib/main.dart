@@ -3,22 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:fridgefull/Homepage.dart';
 import 'package:fridgefull/authenticate.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-import 'utils/constants.dart';
 import 'package:fridgefull/home_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'net/flutterfire.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Constants.prefs = await SharedPreferences.getInstance();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -38,7 +35,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:Constants.prefs.getBool("loggedIn")==true ? HomeView():Authentication(),
+      home: (_auth.isSignedIn()) ? HomeView():Authentication(),
         routes:{
           Authentication.routeName:(context) => Authentication(),
           HomeView.routeName:(context) => HomeView(),

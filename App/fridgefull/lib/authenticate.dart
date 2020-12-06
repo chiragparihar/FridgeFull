@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import  'package:google_sign_in/google_sign_in.dart';
-import 'utils/constants.dart';
+
 import 'home_view.dart';
 import 'net/flutterfire.dart';
 
@@ -13,7 +13,7 @@ class Authentication extends StatefulWidget{
 
 }
 class _AuthenticationState extends State<Authentication>{
-
+  final AuthService _auth = AuthService();
   TextEditingController _email = TextEditingController();
   TextEditingController _psk = TextEditingController();
   String _err= "";
@@ -88,23 +88,22 @@ class _AuthenticationState extends State<Authentication>{
                   width:MediaQuery.of(context).size.width /1.4,
                   height:45,
                   decoration: BoxDecoration(
-
                     borderRadius: BorderRadius.circular(15.0),
                     color:Colors.white,
                   ),
                   child:MaterialButton(
                     onPressed: () async{
-                      auth shouldNavigate = await register(_email.text,_psk.text);
-                      print(shouldNavigate);
-                      if(shouldNavigate.answ){
+                      dynamic shouldNavigate = await _auth.Register(_email.text,_psk.text);
+
+                      if(shouldNavigate.value){
                         Navigator.pushReplacementNamed(context,HomeView.routeName);
-                        changeErr(shouldNavigate.mess);
+                        changeErr(shouldNavigate.message);
                       }
                       else{
                         _psk.clear();
                         _email.clear();
 
-                        changeErr(shouldNavigate.mess);
+                        changeErr(shouldNavigate.message);
                       }
                     },
                     child:Text("Register"),
@@ -122,14 +121,14 @@ class _AuthenticationState extends State<Authentication>{
                   ),
                   child:MaterialButton(
                     onPressed: () async{
-                      auth shouldNavigate = await signIn(_email.text,_psk.text);
-                      if(shouldNavigate.answ){
+                      dynamic shouldNavigate = await _auth.signIn(_email.text,_psk.text);
+                      if(shouldNavigate.value){
                         Navigator.push(context,MaterialPageRoute(builder:(context) => HomeView()));
-                        changeErr(shouldNavigate.mess);
-                        Constants.prefs.setBool("loggedIn", true);
+                        changeErr(shouldNavigate.message);
+                      //  Constants.prefs.setBool("loggedIn", true);
                       }
                       else{
-                        changeErr(shouldNavigate.mess);
+                        changeErr(shouldNavigate.message);
                         _psk.clear();
                         _email.clear();
                       }
