@@ -1,0 +1,1 @@
+learn basic firebase authentication and try to implement it

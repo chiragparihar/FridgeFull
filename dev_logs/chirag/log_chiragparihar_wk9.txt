@@ -1,0 +1,1 @@
+Implemented dummy data to the database as soon as user registers
