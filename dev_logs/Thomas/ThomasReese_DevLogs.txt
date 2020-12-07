@@ -1,0 +1,47 @@
+Name: Thomas Reese
+Student Number: 100979743
+
+
+Week 1:
+Role in the Deliverable: helped flesh out app idea
+-participated in group meeting.
+-made public Figma design document.
+
+
+Week 2:
+Role in the Deliverable: talked about app UI concerns during presentation/pitch, made Figma mockup to base app off of (was included in slides)
+-participated in group meeting.
+
+
+Week 3:
+-participated in group meeting.
+
+
+Week 4:
+-participated in group meeting.
+
+Week 5:
+-participated in group meeting.
+-made component diagram for deliverable 2.
+
+Week 6:
+-participated in group meeting.
+-Begin learning RIVE vector software for app
+
+Week 7:
+-participated in group meeting.
+
+Week 8:
+-participated in group meeting.
+-wrote app architecture section of deliverable 3
+
+Week 9:
+-participated in group meeting.
+-Succeeded in integrating RIVE vector animations with default Flutter app
+-FAILED in integrating RIVE animations with our app
+
+Week 10:
+-participated in group meeting.
+-learned how to use Davinci Resolve video editing software
+-learned how to use OBS to use with Clip Studio Paint
+-made entire project-video/advertisement
