@@ -7,31 +7,19 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'net/flutterfire.dart';
-GroceryItem item1 = GroceryItem(title: 'onions', description: 'green veg', quantity: 4, image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBroccoli&psig=AOvVaw08NJjY9g5TCxsyXkzJtGFP&ust=1604621080540000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiKsL6N6uwCFQAAAAAdAAAAABAD');
-
-List<GroceryItem> groceryList = [
-  GroceryItem(title: 'Broccoli', description: 'green veg', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/787/433/6000194787433.jpg',price:10.99),
-  GroceryItem(title: 'carrots', description: 'vegetables', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/686/686/6000198686686.jpg',price:6.99),
-  GroceryItem(title: 'onions', description: 'vegetables', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/324/982/6000187324982.jpg',price:5.49),
-];
-
-List<GroceryItem> fridgeList = [
-  GroceryItem(title: 'cheese', description: 'cottage cheese', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/460/932/6000199460932.jpg',price:5.99),
-  GroceryItem(title: 'bread', description: 'green veg', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/686/686/6000198686686.jpg',price:6.99),
-  GroceryItem(title: 'milk', description: 'skim milk 4%', quantity: 4, image: 'https://i5.walmartimages.ca/images/Large/487/542/6000201487542.jpg',price:4.49),
-];
 
 
 class GroceryList extends StatefulWidget {
 
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
   _GroceryListState createState() => _GroceryListState();
 }
 
 class _GroceryListState extends State<GroceryList> {
   final AuthService _auth = AuthService();
-
+  String id ;
+  List<GroceryItem> groceryList ;
+  List<GroceryItem> fridgeList ;
   String _scanBarcode = 'Unknown';
   Future<void> scanBarcodeNormal() async {
     String barcodeScanRes;
@@ -56,6 +44,73 @@ class _GroceryListState extends State<GroceryList> {
   @override
   void initState(){
     super.initState();
+    getGroceyList();
+    getFridgeList();
+  }
+  Future getGroceyList() async{
+    id = _auth.getUserId();
+    await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("grocerylist")
+        .get()
+        .then((QuerySnapshot querySnapshot) => {
+      groceryList =[],
+      querySnapshot.docs.forEach((doc) {
+        Map<String,dynamic> useritem = doc.data();
+        var userdata = GroceryItem.fromJson(useritem);
+        groceryList.add(userdata);
+      }),
+      setState(() {}),
+    });
+
+  }
+  Future getFridgeList() async{
+    final AuthService _auth = AuthService();
+    print(_auth.getUserId());
+    await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("fridgelist")
+        .get()
+        .then((QuerySnapshot querySnapshot) => {
+          fridgeList =[],
+      querySnapshot.docs.forEach((doc) {
+        Map<String,dynamic> useritem = doc.data();
+        var userdata = GroceryItem.fromJson(useritem);
+        fridgeList.add(userdata);
+      }),
+    setState(() {}),
+    });
+
+  }
+  Future addtoFridge(item) async{
+    await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("fridgelist").add(item.toJson());
+    fridgeList.add(item);
+  }
+  Future addtoGrocery(item) async{
+    await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("grocerylist").add(item.toJson());
+    groceryList.add(item);
+  }
+  void removeGrocery(item) async{
+    Query q = await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("grocerylist").where('title' , isEqualTo: item.title.toString());
+    q.get().then((QuerySnapshot querySnapshot)=>{
+      querySnapshot.docs.forEach((doc) {
+      doc.reference.delete();
+      })
+    });
+    groceryList.remove(item);
+
+  }
+  void removeFridge(item) async{
+    Query q = await FirebaseFirestore.instance
+        .collection('users').doc(id).collection("fridgelist").where('title', isEqualTo: item.title.toString());
+    q.get().then((QuerySnapshot querySnapshot)=>{
+      querySnapshot.docs.forEach((doc) {
+        doc.reference.delete();
+      })
+    });
+    fridgeList.remove(item);
+
 
   }
   fetchData() async{
@@ -73,11 +128,9 @@ class _GroceryListState extends State<GroceryList> {
       double pc = double.parse(data['products'][0]["stores"][0]["store_price"]);
       item = GroceryItem(image: (data['products'][0])['images'][0],title:(data['products'][0]["product_name"].split(","))[0],quantity:1,description:desc,price:pc);
 
-      print((data['products'][0]["product_name"].split(","))[0]);
-      print((data['products'][0])['images'][0]);
-      print((data['products'][0])['images'][0]);
+
       setState(() {
-        currentIndex == 0 ? groceryList.add(item): fridgeList.add(item);
+        currentIndex == 0 ? addtoGrocery(item):addtoFridge(item);
       });
 
 
@@ -90,12 +143,12 @@ class _GroceryListState extends State<GroceryList> {
   _addItem(GroceryItem item){
     if(currentIndex == 0) {
       setState(() {
-        groceryList.add(item);
+        addtoGrocery(item);
       });
     }
     else if(currentIndex == 1){
       setState(() {
-        fridgeList.add(item);
+        addtoFridge(item);
       });
     }
   }
@@ -103,12 +156,12 @@ class _GroceryListState extends State<GroceryList> {
   _removeItem(GroceryItem item){
     if(currentIndex == 0) {
       setState(() {
-        groceryList.remove(item);
+        removeGrocery(item);
       });
     }
     else if (currentIndex == 1){
       setState(() {
-        fridgeList.remove(item);
+        removeFridge(item);
       });
     }
   }
@@ -116,29 +169,27 @@ class _GroceryListState extends State<GroceryList> {
   _switchList(GroceryItem item){
     if(currentIndex == 0){
       setState(() {
-        groceryList.remove(item);
-        fridgeList.add(item);
+        removeGrocery(item);
+        addtoFridge(item);
       });
     }
     else if(currentIndex == 1){
       setState(() {
-        fridgeList.remove(item);
-        groceryList.add(item);
+        removeFridge(item);
+        addtoGrocery(item);
       });
     }
   }
 
   int currentIndex = 0;
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
+
 
   @override
   Widget build(BuildContext context) {
-    String uid  = _auth.getUserId();
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-    final tabs = [
+
+    final tabs = groceryList != null ? [
       ListView(
-
           children: groceryList.map((item) => ListCardTemplate(
             itemData: item,
             addItem: _addItem,
@@ -154,7 +205,9 @@ class _GroceryListState extends State<GroceryList> {
             switchList: _switchList,
           )).toList()
       ),
-    ];
+    ]: [Center(
+        child: CircularProgressIndicator()
+    )];
 
     return Scaffold(
       backgroundColor: Colors.lightBlue[400],
